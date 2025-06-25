@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Water Pipeline Management</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #e0f7fa, #ffffff);
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+      }
+      h1 {
+        text-align: center;
+        color: #00796b;
+        margin-bottom: 30px;
+      }
+      h2 {
+        color: #00796b;
+        margin-top: 40px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #b2dfdb;
+      }
+      .section {
+        margin-bottom: 40px;
+      }
+      .query-link {
+        display: block;
+        padding: 12px 20px;
+        margin: 10px 0;
+        background-color: #b2dfdb;
+        color: #004d40;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .query-link:hover {
+        background-color: #80cbc4;
+        transform: scale(1.02);
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .description {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #546e7a;
+        line-height: 1.6;
+      }
+      .complaint-form {
+        background-color: #e0f2f1;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #00695c;
+        font-weight: 500;
+      }
+      select,
+      textarea,
+      input[type="number"] {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #b2dfdb;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 14px;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      .submit-btn {
+        background-color: #009688;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+      }
+      .submit-btn:hover {
+        background-color: #00796b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Water Pipeline Management System</h1>
+      <p class="description">
+        A comprehensive solution for managing water pipeline infrastructure,
+        billing, and maintenance across multiple companies, sectors, and
+        colonies.
+      </p>
+
+      <div class="section">
+        <h2>General Info & Statistics</h2>
+        <div class="grid-container">
+          <a href="query1.html" class="query-link">1. Select Billing Details</a>
+          <a href="query2.html" class="query-link"
+            >2. Billing Totals by Company</a
+          >
+          <a href="query3.html" class="query-link"
+            >3. Colonies with Above/Below Average Bill Amounts</a
+          >
+          <a href="query4.html" class="query-link"
+            >4. Sectors with 100% Complaint Coverage</a
+          >
+          <a href="query5.html" class="query-link"
+            >5. Colony Count for Selected Company &amp; Sector</a
+          >
+          <a href="query6.html" class="query-link"
+            >6. Fully Paid Colonies (by Quarter &amp; Year)</a
+          >
+          <a href="query7.html" class="query-link"
+            >7. Top Companies by Sector Count</a
+          >
+          <a href="query8.html" class="query-link"
+            >8. Total Revenue for Selected Billing Cycle</a
+          >
+          <a href="query9.html" class="query-link"
+            >9. Colony Billing Statistics</a
+          >
+          <a href="query10.html" class="query-link"
+            >10. Early Payments &amp; Bill Amount Filter</a
+          >
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Complaint Submission</h2>
+        <p>
+          File a new complaint for a colony and automatically update the
+          complaint status flags.
+        </p>
+
+        <div class="complaint-form">
+          <form action="/submit-complaint" method="POST">
+            <div class="form-group">
+              <label for="colony_id">Colony ID:</label>
+              <select id="colony_id" name="colony_id" required>
+                <option value="" disabled selected>Choose a colony</option>
+                <script>
+                  for (let i = 1; i <= 30; i++) {
+                    document.write(`<option value="${i}">Colony ${i}</option>`);
+                  }
+                </script>                
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="complaint_type">Complaint Type:</label>
+              <select id="complaint_type" name="complaint_type" required>
+                <option value="" disabled selected>
+                  Select complaint type
+                </option>
+                <option value="Leakage">Leakage</option>
+                <option value="Water Quality">Water Quality</option>
+                <option value="Low Pressure">Low Pressure</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description:</label>
+              <textarea
+                id="description"
+                name="description"
+                placeholder="Provide details about the complaint..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Complaint</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Submit a Payment</h2>
+        <p>Record a payment made by a colony for a selected billing cycle.</p>
+
+        <div class="complaint-form">
+          <form action="/submit-payment" method="POST">
+            <div class="form-group">
+              <label for="colony_id">Colony ID:</label>
+              <select id="colony_id" name="colony_id" required>
+                <option value="" disabled selected>Choose a colony</option>
+                <script>
+                  for (let i = 1; i <= 30; i++) {
+                    document.write(`<option value="${i}">Colony ${i}</option>`);
+                  }
+                </script>                
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="year">Billing Year:</label>
+              <select id="year" name="year" required>
+                <option value="" disabled selected>Choose year</option>
+                <script>
+                  for (let y = 2024; y <= 2031; y++) {
+                    document.write(`<option value="${y}">${y}</option>`);
+                  }
+                </script>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="quarter">Billing Quarter:</label>
+              <select id="quarter" name="quarter" required>
+                <option value="" disabled selected>Choose quarter</option>
+                <option value="1">Q1</option>
+                <option value="2">Q2</option>
+                <option value="3">Q3</option>
+                <option value="4">Q4</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Amount to Pay:</label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                min="100"
+                step="100"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="payment_method">Payment Method:</label>
+              <select id="payment_method" name="payment_method" required>
+                <option value="" disabled selected>Select a method</option>
+                <option value="UPI">UPI</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Cash">Cash</option>
+              </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Payment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

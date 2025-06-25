@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Environment variables and database config
+.env
+.env.local
+.env.development
+.env.production
+config.json
+database-config.js
+db-credentials.json
+
+# Database files (if any)
+*.db
+*.sqlite
+*.sql
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs (if you have any)
+dist/
+build/
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+temp/
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock

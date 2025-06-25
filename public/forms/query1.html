@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Query 1: Select Billing Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e9f5ec;
+      padding: 40px;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 650px;
+      margin: auto;
+      box-shadow: 0 8px 24px rgba(0, 128, 0, 0.1);
+    }
+
+    h3 {
+      text-align: center;
+      color: #2f7a44;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    fieldset {
+      border: 2px solid #b2d8b2;
+      border-radius: 12px;
+      padding: 20px 30px;
+      margin-bottom: 30px;
+      background-color: #f7fcf8;
+    }
+
+    legend {
+      font-weight: bold;
+      font-size: 18px;
+      padding: 0 12px;
+      color: #2e7d32;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0;
+      font-size: 16px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+
+    button[type="submit"] {
+      background-color: #4caf50;
+      color: #ffffff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 0 auto;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #388e3c;
+      box-shadow: 0 4px 12px rgba(56, 142, 60, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h3>Query 1: Select Billing Details to View</h3>
+    <form action="/query1" method="POST">
+      <fieldset>
+        <legend>Select Fields to Display:</legend>
+        <label><input type="checkbox" name="fields" value="bill_id"> Bill ID</label>
+        <label><input type="checkbox" name="fields" value="colony_name"> Colony Name</label>
+        <label><input type="checkbox" name="fields" value="sector_name"> Sector Name</label>
+        <label><input type="checkbox" name="fields" value="company_name"> Company Name</label>
+        <label><input type="checkbox" name="fields" value="base_amount"> Base Amount</label>
+        <label><input type="checkbox" name="fields" value="previous_due"> Previous Due</label>
+        <label><input type="checkbox" name="fields" value="penalty_amount"> Penalty Amount</label>
+        <label><input type="checkbox" name="fields" value="total_due"> Total Due</label>
+        <label><input type="checkbox" name="fields" value="status"> Status</label>
+        <label><input type="checkbox" name="fields" value="year"> Year</label>
+        <label><input type="checkbox" name="fields" value="quarter"> Quarter</label>
+      </fieldset>
+      <button type="submit">Execute Query</button>
+    </form>
+  </div>
+</body>
+</html>

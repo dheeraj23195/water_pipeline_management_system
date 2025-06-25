@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Query 9: Bills Paid Per Colony</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9f7ef;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 600px;
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(40, 167, 69, 0.1);
+        width: 90%;
+      }
+
+      h3 {
+        text-align: center;
+        color: #1e7e34;
+        margin-bottom: 24px;
+        font-size: 22px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #2c3e50;
+      }
+
+      select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 2px solid #d4edda;
+        background-color: #f8fdf8;
+        font-size: 15px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      select[multiple] {
+        height: 250px;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 16px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #218838;
+        box-shadow: 0 4px 12px rgba(33, 136, 56, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Bills Paid by Colonies Per Cycle</h3>
+      <form action="/query9" method="POST">
+        <label for="colonies">Select Colonies (Ctrl/Cmd to multi-select):</label>
+        <select name="colonies" id="colonies" multiple required>
+          <option value="Green Valley">Green Valley</option>
+          <option value="Sunshine Gardens">Sunshine Gardens</option>
+          <option value="Blue Ridge">Blue Ridge</option>
+          <option value="Golden Heights">Golden Heights</option>
+          <option value="Silver Springs">Silver Springs</option>
+          <option value="Crystal Park">Crystal Park</option>
+          <option value="Riverside Manor">Riverside Manor</option>
+          <option value="Oak Gardens">Oak Gardens</option>
+          <option value="Pine Valley">Pine Valley</option>
+          <option value="Maple Woods">Maple Woods</option>
+          <option value="Cedar Heights">Cedar Heights</option>
+          <option value="Birch Colony">Birch Colony</option>
+          <option value="Central Park">Central Park</option>
+          <option value="Downtown Heights">Downtown Heights</option>
+          <option value="Metro Gardens">Metro Gardens</option>
+          <option value="Tech Park">Tech Park</option>
+          <option value="Innovation Hub">Innovation Hub</option>
+          <option value="Industrial Estate">Industrial Estate</option>
+          <option value="Business District">Business District</option>
+          <option value="Commerce Square">Commerce Square</option>
+          <option value="Trade Center">Trade Center</option>
+          <option value="Garden Colony">Garden Colony</option>
+          <option value="Lake View">Lake View</option>
+          <option value="Hill Side">Hill Side</option>
+          <option value="Valley View">Valley View</option>
+          <option value="River Front">River Front</option>
+          <option value="Mountain View">Mountain View</option>
+          <option value="Urban Village">Urban Village</option>
+          <option value="City Center">City Center</option>
+          <option value="Town Square">Town Square</option>
+        </select>
+        <button type="submit">Get Colony Billing Stats</button>
+      </form>
+    </div>
+  </body>
+</html>

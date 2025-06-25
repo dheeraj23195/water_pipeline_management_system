@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Query 7: Top Companies by Sectors Managed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9f7ef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .form-container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(40, 167, 69, 0.1);
+        max-width: 500px;
+        width: 100%;
+      }
+
+      h3 {
+        text-align: center;
+        color: #1e7e34;
+        margin-bottom: 24px;
+        font-size: 22px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 15px;
+      }
+
+      select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 2px solid #d4edda;
+        background-color: #f8fdf8;
+        font-size: 15px;
+        color: #333;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 10px;
+        padding: 12px 16px;
+        font-size: 16px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #218838;
+        box-shadow: 0 4px 12px rgba(33, 136, 56, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h3>Query 7: Top Companies by Sectors Managed</h3>
+      <form action="/query7" method="POST">
+        <label for="ranking">Select Ranking:</label>
+        <select name="ranking" id="ranking" required>
+          <option value="1">Top 1</option>
+          <option value="2">Top 2</option>
+          <option value="3">Top 3</option>
+          <option value="4">Top 4</option>
+          <option value="5">Top 5</option>
+        </select>
+        <button type="submit">Get Results</button>
+      </form>
+    </div>
+  </body>
+</html>
